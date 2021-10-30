@@ -12,12 +12,12 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.plugin.version>3.8.0</maven.compiler.plugin.version>
         <maven.surefire.plugin.version>3.0.0-M3</maven.surefire.plugin.version>
-        <aspectj.version>1.9.3.RC1</aspectj.version>
+        <aspectj.version>1.8.10</aspectj.version>
         <jetty.maven.plugin.version>9.3.9.v20160517</jetty.maven.plugin.version>
         <allure.maven.version>2.10.0</allure.maven.version>
         <rest.assured.version>3.3.0</rest.assured.version>
         <allure.rest.assured.version>2.10.0</allure.rest.assured.version>
-        <allure.testng.version>2.10.0</allure.testng.version>
+        <allure.testng.version>2.16.0</allure.testng.version>
         <junit.version>4.12</junit.version>
     </properties>
 
@@ -38,9 +38,8 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
-                    <version>${maven.surefire.plugin.version}</version>
+                    <version>2.20</version>
                     <configuration>
-                        <testFailureIgnore>false</testFailureIgnore>
                         <argLine>
                             -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                         </argLine>

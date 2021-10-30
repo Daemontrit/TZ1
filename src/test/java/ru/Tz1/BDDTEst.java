@@ -1,5 +1,6 @@
 package ru.Tz1;
 
+import io.qameta.allure.Step;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
@@ -8,6 +9,8 @@ import org.json.JSONObject;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
+import static io.qameta.allure.Allure.step;
 
 public class BDDTEst {
 
@@ -54,9 +57,15 @@ public class BDDTEst {
         Assert.assertEquals(response.getBody().jsonPath().get("name"), requestBody.get("name"));
         Assert.assertEquals(response.getBody().jsonPath().get("hobby"), requestBody.get("hobby"));
         Assert.assertEquals(response.getBody().jsonPath().get("phone"), requestBody.get("phone"));
+        step("request",()-> (request.post("http://users.bugred.ru/tasks/rest/createuser")));
+        step("response",()-> (response.jsonPath()));
 
+       // step("do something",()-> doSomething());
 
         }
+
+
+
     }
 
 
